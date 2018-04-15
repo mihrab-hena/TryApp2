@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2> Create new Student</h2>
+    <div id="createNewStudent"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/babel" src="{{ asset('js/registration_student_react.js') }}"></script>
+
+    <script type="text/babel">
+
+        ReactDOM.render(
+            <RegistrationStudent />,
+        document.getElementById('createNewStudent')
+        );
+    </script>
+{% endblock %}

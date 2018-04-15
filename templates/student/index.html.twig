@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SymphArt Articles{% endblock %}
+
+{% block body %}
+  {% if students %}
+    <table id="articles">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+          <tr>
+            <td>{{ student.firstName }}</td>
+            <td>
+                {{student.lastName}}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No students to display</p>
+  {% endif %}
+{% endblock %}
+
+{# {% block javascripts %}
+  <script src="/js/main.js"></script>
+{% endblock %} #}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2> {{name}}</h2>
+    <div id="studentInfoShowDiv"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/babel" src="{{ asset('js/show_studentInfo_react.js') }}"></script>
+
+    <script type="text/babel">
+
+        ReactDOM.render(
+            <Student />,
+        document.getElementById('studentInfoShowDiv')
+        );
+    </script>
+{% endblock %}
